@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: forum-app-node-deployment
+  labels:
+    app: forum-app-node
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: node-server
+  template:
+    metadata:
+      labels:
+        app: node-server
+    spec:
+      containers:
+      - name: forum-app-node-server
+        image: alerajo/forum-app-node-server:latest
+        ports:
+        - containerPort: 3001
