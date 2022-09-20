@@ -5,5 +5,5 @@ RUN npm install
 COPY . .
 EXPOSE 3001
 ENV PORT=3001
-ENV DB_URI='postgresql://postgres:forum123@database:5432/forum-db'
+ENV DB_URI="postgresql://postgres:forum123@database:5432/forum-db"
 CMD ["npm", "start"]
